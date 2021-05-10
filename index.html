@@ -8,6 +8,7 @@
     />
     <title>大屏可视化项目</title>
     <script>
+      // 获取屏幕宽高尺寸，根据屏幕比例 计算页面宽度，进而得出页面高度。最后将其写入主页style标签中即可。
       const clientWidth = document.documentElement.clientWidth
       const clientHeight = document.documentElement.clientHeight
       window.pageWidth =
@@ -21,7 +22,9 @@
   <body>
     <div id="root"></div>
     <script>
+      //直接在body中用js设置root元素的高度，宽度自动铺满
       root.style.height = pageHeight + 'px'
+      //设置root元素的垂直居中（水平居中在css里面写即可）
       root.style.marginTop = (clientHeight - pageHeight) / 2 +'px'
     </script>
     <script type="module" src="/src/main.tsx"></script>

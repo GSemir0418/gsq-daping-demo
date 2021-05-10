@@ -1,3 +1,4 @@
+// charts图表公共部分抽取
 import { px } from './px'
 
 export const BaseEchartsOptions = {

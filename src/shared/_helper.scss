@@ -1,3 +1,4 @@
+// scss公共方法，换算rem
 @function px($n) {
   @return $n / 2420 * 100rem;
 }

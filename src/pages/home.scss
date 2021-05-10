@@ -4,14 +4,16 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  // 以上目的是子元素铺满父元素
   background: #010310;
+  //字体颜色
   color: white;
   font-size: px(16);
   > header {
     height: px(99);
     width: px(2420);
-    margin:0 auto;
-    background-size: cover;
+    margin:0 auto;//header元素水平居中
+    background-size: cover;//把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。
   }
   > footer {
     height: px(68);
@@ -20,30 +22,33 @@
     border-radius: 4px;
     background: #0c0d2b;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;//定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式，适用一行flex子元素 纵向对齐
+    //align-content//适用多行flex子元素的排列
+    justify-content: center;//设置flex子项（flex items）在主轴上的对齐方式 横向对齐
 
   }
   > main {
     width: px(2420);
-    margin:0 auto;
+    margin:0 auto;//main元素居中
     padding-top: px(30);
     flex: 1;
-    display: grid;
+    display: grid;//grid布局
     grid-template:
       'box1 box2 box4 box5' 755fr
-      'box3 box3 box4 box5' 363fr / 366fr 361fr 811fr 747fr;
-    grid-column-gap: px(28);
-    grid-row-gap: px(28);
+      'box3 box3 box4 box5' 363fr / 366fr 361fr 811fr 747fr;//很神奇 能自适应调整大小比例
+    grid-column-gap: px(28);//网格纵向间距大小
+    grid-row-gap: px(28);//网格横向间距大小
     > section {
-      text-align: center;
+      text-align: center;//规定元素中的文本的水平居中对齐
     }
     .bordered {
       border: 1px solid #4178c0;
       border-radius: 4px;
       position: relative;
+      //box-shadow: 水平阴影位置 垂直阴影位置 模糊距离 阴影大小;
       box-shadow: 0 0 2px 0 #0e325f, inset 0 0 2px 0 #0e325f;
       background: #0c1139;
+      //伪元素，其将成为匹配选中的元素的第一个子元素。常通过 content 属性来为一个元素添加修饰性的内容。此元素默认为行内元素。
       &::before {
         content: '';
         position: absolute;
@@ -52,6 +57,7 @@
         bottom: 0;
         top: 0;
         border-radius: 4px;
+        // 分别给四个边加阴影
         box-shadow: 17px 0 0 -16px #0e325f, -17px 0 0 -16px #0e325f,
           0 17px 0 -16px #0e325f, 0 -17px 0 -16px #0e325f, 9px 0 0 -8px #0d4483,
           -9px 0 0 -8px #0d4483, 0 9px 0 -8px #0d4483, 0 -9px 0 -8px #0d4483;
@@ -61,6 +67,7 @@
       grid-area: box1;
       display: flex;
       flex-direction: column;
+      //均匀排列每个元素，首个元素放置于起点，末尾元素放置于终点
       justify-content: space-between;
     }
     > .section2 {
@@ -77,7 +84,7 @@
     }
     .管辖统计,.案件破获排名 {
       height: px(315);
-      text-align: center;
+      text-align: center;//规定元素中的文本的水平居中对齐
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -89,6 +96,7 @@
         font-size: px(22);
         line-height: px(24);
         padding: px(10) px(28);
+        //text-shadow: 水平阴影位置 垂直阴影位置 模糊距离 阴影大小;
         text-shadow: 0 0 px(3) white;
       }
       .chart {
@@ -102,7 +110,7 @@
       .legend {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: flex-end;//右对齐
         width: 100%;
         padding: 0 px(20) px(10);
         > .first,
