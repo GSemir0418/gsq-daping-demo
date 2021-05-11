@@ -5,6 +5,7 @@ import Chart1 from '../components/Chart1';
 import Chart2 from '../components/Chart2';
 import Chart3 from '../components/Chart3';
 import Chart4 from '../components/Chart4';
+import Chart5 from '../components/Chart5';
 
 
 export const Home = () => {
@@ -26,7 +27,9 @@ export const Home = () => {
           <Chart4 />
         </section>
         {/* box3 */}
-        <section className="bordered section3"></section>
+        <section className="section3">
+          <Chart5 />
+        </section>
         {/* box4 */}
         <section className="bordered section4"></section>
         {/* box5 */}
