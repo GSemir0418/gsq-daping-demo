@@ -144,7 +144,7 @@
       height: 100%;
       > table {
         margin-top: px(38);
-        border-collapse: collapse;
+        border-collapse: collapse; //表格合并边框，默认是separate
         th,
         td {
           border: 1px solid #1a3671;
