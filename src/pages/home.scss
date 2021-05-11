@@ -89,7 +89,8 @@
     .案件破获排名,
     .案发趋势分析,
     .案发时段分析,
-    .战果表 {
+    .战果表,
+    .籍贯 {
       height: px(315);
       text-align: center; //规定元素中的文本的水平居中对齐
       display: flex;
@@ -161,6 +162,43 @@
             width: px(84);
             background: #1c2456;
           }
+        }
+      }
+    }
+    .籍贯 {
+      height: px(753);
+      background: transparent; //背景颜色：透明
+      > .wrapper {//定位用的
+        position: relative;
+        width: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        .chart {
+          flex: 1;
+        }
+        .legend {
+          position: absolute;
+          top: px(40);
+          left: px(20);
+          display: flex;
+          align-items: center;
+          font-size: px(22);
+          padding: px(20) px(10) px(20) 0;
+          border-radius: 0;
+          .icon {
+            margin: 0 px(10);
+            display: inline-block;
+            width: px(16);
+            height: px(16);
+            border-radius: 50%; //成圆形了
+            background: #1cecd9;
+          }
+        }
+        .notes {
+          position: absolute;
+          bottom: px(10);
+          right: px(10);
         }
       }
     }

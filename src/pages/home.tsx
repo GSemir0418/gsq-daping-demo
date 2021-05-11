@@ -6,6 +6,7 @@ import Chart2 from '../components/Chart2';
 import Chart3 from '../components/Chart3';
 import Chart4 from '../components/Chart4';
 import Chart5 from '../components/Chart5';
+import Chart6 from '../components/Chart6';
 
 
 export const Home = () => {
@@ -31,7 +32,9 @@ export const Home = () => {
           <Chart5 />
         </section>
         {/* box4 */}
-        <section className="bordered section4"></section>
+        <section className="section4">
+          <Chart6 />
+        </section>
         {/* box5 */}
         <section className="bordered section5"></section>
       </main>
