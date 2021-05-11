@@ -96,9 +96,9 @@
     .籍贯,
     .年龄段 {
       height: px(315);
-      text-align: center; //规定元素中的文本的水平居中对齐
       display: flex;
       flex-direction: column;
+      text-align: center; //规定元素中的文本的水平居中对齐
       align-items: center;
       h2 {
         flex-shrink: 0; //不会被其他元素挤到
@@ -117,8 +117,7 @@
       }
     }
     .案件破获排名 {
-      height: px(440);
-
+      height: px(411);
       .legend {
         display: flex;
         align-items: center;
@@ -209,19 +208,74 @@
     }
     .年龄段 {
       //上面写了下面还要一遍是为什么。。
-      display: flex;flex-direction: column;//加上这两句居然解决了与上面部分间距的问题！
+      display: flex;
+      flex-direction: column; //加上这两句居然解决了与上面部分间距的问题！
       height: px(363);
       .charts {
         width: 100%;
         flex: 1;
         display: flex; //内部排列方式为flex
         padding: px(30); //内边距
-        border: 1px solid red;
       }
-      &-图1,&-图2,&-图3{
-        flex:1;//自动铺满
-        border: 1px solid red;
-        display: flex; flex-direction: column;
+      &-图1,
+      &-图2,
+      &-图3 {
+        flex: 1; //自动铺满
+        display: flex;
+        flex-direction: column;
+        .chart {
+          position: relative; //相对定位 为了定位里面的text
+          display: flex;
+          > .main {
+            flex: 1; //自动铺满剩余部分
+          }
+          > .text {
+            position: absolute;
+            top: 50%;
+            left: 50%; //绝对定位居中，但是基于左上角的居中
+            transform: translate(-50%, -50%); //还需移动自身的50%
+            color: #33a4fa;
+            font-size: px(40);
+            text-shadow: 0 0 px(20) #33a4fa;
+            font-weight: bold; //字体加粗
+          }
+        }
+        .legend {
+          height: px(40); //指定legend部分高度
+          display: flex;
+          align-items: center; //纵向居中
+          justify-content: center; //横向居中
+          flex-wrap: wrap; //自动换行
+          > span {
+            display: inline-block;
+            width: px(16);
+            height: px(10);
+            border-radius: px(2);
+            margin: 0 px(10);
+          }
+          .male {
+            background: #33a4fa;
+          }
+          .female {
+            background: #8d70f8;
+          }
+        }
+      }
+      &-图2 {
+        width: px(290);
+        flex-shrink: 0; //保证图2不会被挤到，表示图2不进行灵活收缩
+        .legend {
+          justify-content: flex-start; //左对齐排列
+        }
+      }
+      &-图3 {
+        border: 1px solid #08397d;
+        width: 100%;
+        h3 {
+          font-size: px(20);
+          color: #7ab6db;
+          margin-top: px(6);
+        }
       }
     }
   }
