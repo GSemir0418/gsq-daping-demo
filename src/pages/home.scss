@@ -12,34 +12,34 @@
   > header {
     height: px(99);
     width: px(2420);
-    margin:0 auto;//header元素水平居中
-    background-size: cover;//把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。
+    margin: 0 auto; //header元素水平居中
+    background-size: cover; //把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。
   }
   > footer {
     height: px(68);
+    //不设置宽度，使其横向自动拉到最大
     margin-top: px(20) 0 1px;
     border: 1px solid #0d2d59;
     border-radius: 4px;
     background: #0c0d2b;
     display: flex;
-    align-items: center;//定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式，适用一行flex子元素 纵向对齐
+    align-items: center; //定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式，适用一行flex子元素 纵向对齐
     //align-content//适用多行flex子元素的排列
-    justify-content: center;//设置flex子项（flex items）在主轴上的对齐方式 横向对齐
-
+    justify-content: center; //设置flex子项（flex items）在主轴上的对齐方式 横向对齐
   }
   > main {
     width: px(2420);
-    margin:0 auto;//main元素居中
+    margin: 0 auto; //main元素居中
     padding-top: px(30);
     flex: 1;
-    display: grid;//grid布局
+    display: grid; //grid布局
     grid-template:
       'box1 box2 box4 box5' 755fr
-      'box3 box3 box4 box5' 363fr / 366fr 361fr 811fr 747fr;//很神奇 能自适应调整大小比例
-    grid-column-gap: px(28);//网格纵向间距大小
-    grid-row-gap: px(28);//网格横向间距大小
+      'box3 box3 box4 box5' 363fr / 366fr 361fr 811fr 747fr; //很神奇 能自适应调整大小比例
+    grid-column-gap: px(28); //网格纵向间距大小
+    grid-row-gap: px(28); //网格横向间距大小
     > section {
-      text-align: center;//规定元素中的文本的水平居中对齐
+      text-align: center; //规定元素中的文本的水平居中对齐
     }
     .bordered {
       border: 1px solid #4178c0;
@@ -72,6 +72,9 @@
     }
     > .section2 {
       grid-area: box2;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
     }
     > .section3 {
       grid-area: box3;
@@ -82,9 +85,12 @@
     > .section5 {
       grid-area: box5;
     }
-    .管辖统计,.案件破获排名 {
+    .管辖统计,
+    .案件破获排名,
+    .案发趋势分析,
+    .案发时段分析 {
       height: px(315);
-      text-align: center;//规定元素中的文本的水平居中对齐
+      text-align: center; //规定元素中的文本的水平居中对齐
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -106,11 +112,11 @@
     }
     .案件破获排名 {
       height: px(440);
-      
+
       .legend {
         display: flex;
         align-items: center;
-        justify-content: flex-end;//右对齐
+        justify-content: flex-end; //右对齐
         width: 100%;
         padding: 0 px(20) px(10);
         > .first,
@@ -121,12 +127,20 @@
           margin: 0 px(10);
         }
         .first {
-          background:#2034f9;
+          background: #2034f9;
         }
         .second {
-          background:#b92ae8;
+          background: #b92ae8;
         }
       }
+    }
+    .案发趋势分析 {
+      height: px(400);
+      width: 100%;
+    }
+    .案发时段分析{
+      height: px(350);
+      width: 100%;
     }
   }
 }

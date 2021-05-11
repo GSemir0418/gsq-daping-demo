@@ -20,9 +20,9 @@ export default function Chart1() {
           fontSize: px(12),
           formatter(val) {
             if (val.length > 2) {
-              const array = val.split('');
-              array.splice(2, 0, '\n');
-              return array.join('');
+              const array = val.split('');//将字符串分割成数组
+              array.splice(2, 0, '\n');//在第二个字符处，删除零个，添加换行
+              return array.join('');//将数组拼接成字符串
             } else {
               return val;
             }

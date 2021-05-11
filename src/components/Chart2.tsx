@@ -31,6 +31,7 @@ export default function Chart2() {
       yAxis: {
         type: 'category',
         data: ['巴西', '巴西', '巴西', '巴西', '印尼', '美国', '印度', '中国', '世界人口'],
+        //图标内对应y轴的分割线
         splitLine: { show: false },
         axisLabel: {
           fontSize: px(12)
@@ -45,6 +46,7 @@ export default function Chart2() {
           //渐变
           itemStyle:{
             normal:{
+              //渐变效果（四个参数分别表示从哪个方向开始的渐变）
               color: new echarts.graphic.LinearGradient(0,0,1,0,[{
                 offset:0,
                 color:'#2034f9'
